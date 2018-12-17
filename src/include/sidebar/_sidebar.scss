@@ -1,0 +1,22 @@
+/* Sidebar
+----------------------------------------------------------------------- */
+
+aside.sidebar
+{
+    @extend #FIXED, #NO-MARGIN, #NO-PADDING;
+    width: 280px;   height: $percentage;
+    border-right: solid 1px lighten($metal, 10%);
+    padding-top: 50px;
+    background: lighten($metal, 18%);
+
+    .search
+    {
+        @extend #ABSOLUTE;
+        width: $percentage;
+        padding: 20px;
+        border-bottom: solid 1px lighten($metal, 15%);
+        z-index: 1;
+    }
+
+    @import "../listbar/listbar";
+}

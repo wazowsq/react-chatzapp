@@ -1,0 +1,141 @@
+/* Aside
+----------------------------------------------------------------------- */
+
+main
+{
+    @include default;
+    padding: 50px 0 0 280px;
+
+    .components
+    {
+        @extend #OVERFLOW;
+        @include default;
+        padding: 20px 30px;
+        padding-right: 200px;
+
+        .breadcrumb
+        {
+            background: lighten($metal, 16%);
+
+            li.breadcrumb-item::before
+            { color: $silver; }
+
+            li.breadcrumb-item,
+            li.breadcrumb-item a
+            {
+                font-family: senticosansThin;
+                font-size: 0.87rem;
+            }
+
+            li.breadcrumb-item a
+            { color: $cerulean; }
+
+            li.breadcrumb-item.active
+            { color: darken($metal, 20%); }
+        }
+
+        /* Components */
+        @import "../components/button/button";
+        @import "../components/checkbox/checkbox";
+        @import "../components/colors/colors";
+        @import "../components/typography/typography";
+
+        h2
+        {
+            font-family: senticosansLight;
+            font-size: 1.87rem;
+            color: lighten($dark, 25%);
+            margin: 30px 0 10px;
+        }
+
+        p
+        {
+            font-family: senticosansThin;
+            color: lighten($dark, 25%);
+        }
+
+        p.info-page
+        {
+            font-size: 1.12rem;
+            color: lighten($dark, 50%);
+        }
+
+        h3
+        {
+            font-family: senticosansRegular;
+            font-size: 1.25rem;
+            margin: 40px 0 5px;
+            color: darken($metal, 30%);
+        }
+
+        h5 { margin-bottom: 10px; }
+
+        .bd-example
+        {
+            padding: 20px;
+            margin-top: 20px;
+            background: $light;
+            border: solid 1px lighten($metal, 15%);
+            background: lighten($metal, 20%);
+        }
+        
+        .highlight
+        {
+            background: lighten($metal, 15%);
+            padding: 30px 20px;
+
+            pre { @extend #HIDDEN; }
+
+            pre code
+            {
+                @extend #SHOW;
+                width: $percentage;
+
+                span
+                {
+                    @extend #SPACING, #IN-BLOCK;
+                    font-family: senticosansThin;
+                }
+
+                .tg { color: $lochmara; }
+                .at { color: $cerulean; }
+                .vl { color: $chestnut; }
+                .if { color: $dark; }
+            }
+        }
+
+        .callout
+        {
+            background: lighten($metal, 15%);
+            padding: 20px;
+            border-left: solid 2px $chestnut;
+            margin: 20px 0;
+        }
+
+        ol
+        {
+            padding: 20px 0 20px 40px;
+            list-style: square;
+
+            li { font-family: senticosansThin; }
+        }
+    }
+
+    .section-nav
+    {
+        @extend #FIXED;
+        top: 0; right: 0;
+        width: 190px;
+        padding-left: 10px; margin-top: 70px;
+        border-left: solid 1px lighten($silver, 20%);
+
+        .lk
+        {
+            @extend #NO-UNDERLINE;
+            font-size: 0.81rem;
+            color: $metal;
+
+            &:hover { color: $cerulean; }
+        }
+    }
+}
